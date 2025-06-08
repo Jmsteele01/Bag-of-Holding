@@ -9,11 +9,17 @@ function HomePage() {
       </header>
 
       <main className="homepage-main">
-        <section className="featured-products">
+        <section className="homepage-nav">
           <h2>Lets get started!</h2>
           {/* Placeholder content */}
-          <div className="p">View Item Database</div>
-          <div className="product-card">View Current Inventory</div>
+    <div className="button-group">
+      <button className="homepage-button">View Item Database</button>
+      <button className="homepage-button">View Your Inventory</button>
+    </div>
+        </section>
+
+        <section className='bag-img'>
+            <img src="src/assets/Bag_of_holding_5e.png" alt="Bag of Holding" width="500" height="600"></img>
         </section>
       </main>
 
