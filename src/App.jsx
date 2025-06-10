@@ -1,12 +1,23 @@
 import React from 'react';
-import HomePage from './pages/HomePage';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage.jsx';
+import ItemsPage from './pages/ItemsPage.jsx';
+import InventoryPage from './pages/InventoryPage.jsx';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <HomePage />
-    </div>
+    <Routes>
+      {/* Home Page */}
+      <Route path="/" element={<HomePage />} />
+
+      {/* Item Database Page */}
+      <Route path="/items" element={<ItemsPage />} />
+
+      {/* Inventory Page */}
+      <Route path="/inventory" element={<InventoryPage />} />
+      
+    </Routes>
   );
 }
 

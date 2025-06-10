@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
+
+  const navigate = useNavigate(); 
   return (
     <div className="homepage">
       <header className="homepage-header">
@@ -13,8 +16,8 @@ function HomePage() {
           <h2>Lets get started!</h2>
           {/* Placeholder content */}
     <div className="button-group">
-      <button className="homepage-button">View Item Database</button>
-      <button className="homepage-button">View Your Inventory</button>
+      <button onClick={() => navigate("/items")} className="homepage-button">View Item Database</button>
+      <button onClick={() => navigate("/inventory")} className="homepage-button">View Your Inventory</button>
     </div>
         </section>
 
