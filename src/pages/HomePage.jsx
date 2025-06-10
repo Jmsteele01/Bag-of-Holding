@@ -1,17 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 
-let itemlist = {
-  name: "",
-  category: "",
-  magical: {
-    isMagic: false,
-    attunement: false
-  },
-  description: "",
-  quantity: 1,
-  rarity: ""
-}
+
 
 function HomePage() {
 
