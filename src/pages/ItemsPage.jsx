@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import items from '../data/items';
 
 function ItemsPage() {
+    const [searchTerm, setSearchTerm] = useState("");
+
   return (
 
     <div className="homepage">
@@ -10,6 +12,15 @@ function ItemsPage() {
         <h1>Item Database</h1>
         <p>Here you'll find a list of common equipment and basic magic items that you can add to your party's inventory.</p>
       </header>
+
+        <div className="search">
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search Items..."
+        />
+      </div>
 
       <main className="items-list">
         {items.map(item => (
