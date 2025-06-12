@@ -9,7 +9,13 @@ function App() {
 
 const [inventory, setInventory] = useState([]);
 
-const addToInventory = (Item)([...inventory, item]);
+const addToInventory = (item) => {
+  setInventory([...inventory, item]);
+};
+
+const removeFromInventory = (itemToRemove) => {
+  setInventory(inventory.filter(item => item.id !== itemToRemove.id));
+};
 
   return (
     <Routes>
