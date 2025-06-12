@@ -26,7 +26,7 @@ const removeFromInventory = (itemToRemove) => {
       <Route path="/items" element={<ItemsPage addToInventory={addToInventory}/>} />
 
       {/* Inventory Page */}
-      <Route path="/inventory" element={<InventoryPage inventory={inventory}/>} />
+      <Route path="/inventory" element={<InventoryPage inventory={inventory} removeFromInventory={removeFromInventory}/>} />
       
     </Routes>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
-function InventoryPage({inventory}) {
+function InventoryPage({inventory, removeFromInventory}) {
       const navigate = useNavigate();
 
   return (
@@ -27,6 +27,7 @@ function InventoryPage({inventory}) {
               <h2>{item.name}</h2>
               <p><strong>Type:</strong> {item.type}</p>
               <p><strong>Rarity:</strong> {item.rarity}</p>
+              <button onClick={() => removeFromInventory(item)}>Remove from Inventory</button>
             </div>
           ))
         )}
