@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import Item from './models/items.mjs'; // Adjust path if needed
+import Item from './models/item.mjs'; 
 
 dotenv.config();
 
@@ -21,7 +21,6 @@ const seedDatabase = async () => {
       useUnifiedTopology: true
     });
 
-    await Item.deleteMany(); // Optional: clears existing items
     const inserted = await Item.insertMany(defaultItems);
     console.log(`Seeded ${inserted.length} items.`);
     
