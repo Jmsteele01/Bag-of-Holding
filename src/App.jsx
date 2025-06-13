@@ -6,27 +6,16 @@ import InventoryPage from './pages/InventoryPage.jsx';
 import './App.css';
 
 function App() {
-
-const [inventory, setInventory] = useState([]);
-
-const addToInventory = (item) => {
-  setInventory([...inventory, item]);
-};
-
-const removeFromInventory = (itemToRemove) => {
-  setInventory(inventory.filter(item => item._id !== itemToRemove._id));
-};
-
   return (
     <Routes>
       {/* Home Page */}
       <Route path="/" element={<HomePage />} />
 
       {/* Item Database Page */}
-      <Route path="/items" element={<ItemsPage addToInventory={addToInventory}/>} />
+      <Route path="/items" element={<ItemsPage />} />
 
       {/* Inventory Page */}
-      <Route path="/inventory" element={<InventoryPage inventory={inventory} removeFromInventory={removeFromInventory}/>} />
+      <Route path="/inventory" element={<InventoryPage />} />
       
     </Routes>
   );

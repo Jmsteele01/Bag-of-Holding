@@ -25,6 +25,7 @@ app.use(express.json());
 
 //Routes 
 app.use('/api/items', itemRoutes);
+app.use('/api/inventory', inventoryRoutes); 
 
 // Err Middleware - only run when we have a server error
 app.use(globalErr);

@@ -1,8 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 
-function InventoryPage({inventory, removeFromInventory}) {
+//get all method for inventory
+function InventoryPage({}) {
       const navigate = useNavigate();
+      const [inventory, setInventory] = useState([]);
+
+    useEffect(() => {
+    const fetchInventory = async () => {
+      try {
+        const res = await fetch("http://localhost:3000/api/items"); // or your port
+        const data = await res.json();
+        setInventory(data);
+      } catch (err) {
+        console.error("Error displaying inventory:", err);
+      }
+    };
+    
+    fetchInventory();
+  }, []);
+
+  //delete method for inventory
+  const removeFromInventory = async (itemToRemove) => {
+    try {
+      await fetch(`http://localhost:3000/api/items/${itemToRemove._id}`, {
+        method: "DELETE"
+      });
+
+      setInventory(inventory.filter(item => item._id !== itemToRemove._id));
+    } catch (err) {
+      console.error("Error removing item:", err);
+    }
+  };
+
 
   return (
 

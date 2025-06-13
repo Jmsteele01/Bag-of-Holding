@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
-function ItemsPage({ addToInventory }) {
+function ItemsPage({ }) {
   const navigate = useNavigate();
   const [items, setItems] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,31 +14,53 @@ function ItemsPage({ addToInventory }) {
       .catch((err) => console.error("Failed to fetch items:", err));
   }, []);
 
-  // Filter items by search term
+    // Add to inventory via POST request
+const addToInventory = async (item) => {
+  try {
+    // Remove _id so Mongo can assign a new one if needed
+    const { _id, ...newItem } = item;
+
+    const res = await fetch("http://localhost:30000/api/items", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newItem)
+    });
+
+    if (!res.ok) throw new Error("Failed to add item to inventory");
+
+    alert(`${item.name} added to inventory.`);
+  } catch (err) {
+    console.error("Error adding to inventory:", err);
+  }
+};
+
+  // Filter items by search term (WIP)
   const filteredItems = items.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
-    <div className="homepage">
+    <div className="items page">
       <div className="button-group">
         <button onClick={() => navigate("/")} className="homepage-button">Home</button>
-        <button onClick={() => navigate("/inventory")} className="homepage-button">View Your Inventory</button>
+        <button onClick={() => navigate("/inventory")} className="inventory-button">View Your Inventory</button>
       </div>
 
-      <header className="homepage-header">
+      <header className="items-header">
         <h1>Item Database</h1>
         <p>Here you'll find a list of common equipment and basic magic items that you can add to your party's inventory.</p>
       </header>
 
-      <div className="search">
+      {/* <div className="search">
         <input
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search Items..."
         />
-      </div>
+      </div> */}
 
       <main className="items-list">
         {filteredItems.map(item => (

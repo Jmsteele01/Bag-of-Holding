@@ -1,3 +1,4 @@
+//old items list used for testing before back-end development
 const items = [
   { id: 1, name: "Potion of Healing", type: "Consumable", rarity: "Common" },
   { id: 2, name: "Longsword", type: "Weapon", rarity: "Common" },
