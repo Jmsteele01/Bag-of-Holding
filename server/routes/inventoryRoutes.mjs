@@ -1,6 +1,5 @@
-// routes/inventoryRoutes.mjs
 import express from 'express';
-import InventoryItem from '../models/item.mjs'; 
+import InventoryItem from '../models/inventoryItem.mjs'; 
 
 const router = express.Router();
 
