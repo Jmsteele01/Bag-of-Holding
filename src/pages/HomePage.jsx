@@ -26,7 +26,7 @@ function HomePage() {
       </main>
 
       <footer className="homepage-footer">
-        <p>&copy; Created by Jacob Steele</p>
+        <p>Created by Jacob Steele</p>
       </footer>
     </div>
   );
