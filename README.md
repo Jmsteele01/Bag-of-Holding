@@ -4,19 +4,6 @@ A full-stack MERN inventory manager for Dungeons & Dragons 5e parties. Quickly b
 
 ---
 
-## 📚 Table of Contents
-
-- [Description](#description)
-- [Technologies Used](#technologies-used)
-- [Features](#features)
-- [Installation](#installation)
-- [Acknowledgements](#acknowledgements)
-- [Contributing](#contributing)
-- [License](#license)
-- [Related Projects](#related-projects)
-
----
-
 ## 📝 Description
 
 Bag of Holding is a practical inventory manager built with the MERN stack that allows users to:
@@ -59,7 +46,7 @@ The app was built as a capstone project for a full-stack JavaScript course, focu
 - ✅ Full Create, Read, Update, Delete (CRUD) capabilities
 - ✅ MongoDB database with separate collections for base items and player inventory
 - ✅ React frontend with routing (`react-router-dom`)
-- ✅ React hooks: `useState`, `useEffect` (and `useReducer` soon)
+- ✅ React hooks: `useState`, `useEffect`
 - ✅ RESTful backend with modular route files
 - ✅ 404 "Not Found" page for routing errors
 - ⏳ Upcoming: integration with D&D 5e API
@@ -68,8 +55,4 @@ The app was built as a capstone project for a full-stack JavaScript course, focu
 
 ## 🚀 Installation
 
-1. **Clone the repositories**
-
-```bash
-git clone https://github.com/your-username/Bag-of-Holding-FE.git
-git clone https://github.com/your-username/Bag-of-Holding-BE.git
+https://github.com/Jmsteele01/bag-of-holding 
