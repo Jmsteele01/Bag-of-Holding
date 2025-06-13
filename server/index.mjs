@@ -5,6 +5,7 @@ import cors from "cors";
 import morgan from "morgan";
 import connectDB from "./db/conn.mjs";
 import itemRoutes from "./routes/itemRoutes.mjs";
+import inventoryRoutes from "./routes/intentoryRoutes.mjs";
 
 // Setups
 dotenv.config();

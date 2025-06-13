@@ -20,7 +20,7 @@ const addToInventory = async (item) => {
     // Remove _id so Mongo can assign a new one if needed
     const { _id, ...newItem } = item;
 
-    const res = await fetch("http://localhost:30000/api/items", {
+    const res = await fetch("http://localhost:30000/api/inventory", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

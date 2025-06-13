@@ -9,7 +9,7 @@ function InventoryPage({}) {
     useEffect(() => {
     const fetchInventory = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/items"); // or your port
+        const res = await fetch("http://localhost:30000/api/inventory"); 
         const data = await res.json();
         setInventory(data);
       } catch (err) {
@@ -23,7 +23,7 @@ function InventoryPage({}) {
   //delete method for inventory
   const removeFromInventory = async (itemToRemove) => {
     try {
-      await fetch(`http://localhost:3000/api/items/${itemToRemove._id}`, {
+      await fetch(`http://localhost:30000/api/inventory/${itemToRemove._id}`, {
         method: "DELETE"
       });
 
@@ -48,7 +48,7 @@ function InventoryPage({}) {
         <p>The items that are currently in your party's shared inventory.</p>
       </header>
 
-      <main className="items-list">
+      <main className="inventory-list">
         {inventory.length === 0 ? (
           <p>No items yet.</p>
         ) : (
