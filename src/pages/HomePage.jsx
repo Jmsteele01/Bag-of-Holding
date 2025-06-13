@@ -16,7 +16,7 @@ function HomePage() {
       <main className="homepage-main">
         <section className="homepage-nav">
           <h2>Lets get started!</h2>
-          {/* Placeholder content */}
+
     <div className="button-group">
       <button onClick={() => navigate("/items")} className="homepage-button">View Item Database</button>
       <button onClick={() => navigate("/inventory")} className="homepage-button">View Your Inventory</button>

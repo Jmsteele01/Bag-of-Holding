@@ -14,7 +14,7 @@ const addToInventory = (item) => {
 };
 
 const removeFromInventory = (itemToRemove) => {
-  setInventory(inventory.filter(item => item.id !== itemToRemove.id));
+  setInventory(inventory.filter(item => item._id !== itemToRemove._id));
 };
 
   return (
