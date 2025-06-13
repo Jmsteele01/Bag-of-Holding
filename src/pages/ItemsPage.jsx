@@ -6,7 +6,7 @@ function ItemsPage({ }) {
   const [items, setItems] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Fetch items from backend on mount
+  // Fetches items from backend data
   useEffect(() => {
     fetch("http://localhost:30000/api/items")
       .then((res) => res.json())
@@ -14,10 +14,10 @@ function ItemsPage({ }) {
       .catch((err) => console.error("Failed to fetch items:", err));
   }, []);
 
-    // Add to inventory via POST request
+    // Inventory POST
 const addToInventory = async (item) => {
   try {
-    // Remove _id so Mongo can assign a new one if needed
+    
     const { _id, ...newItem } = item;
 
     const res = await fetch("http://localhost:30000/api/inventory", {
@@ -74,7 +74,7 @@ const addToInventory = async (item) => {
       </main>
 
       <footer className="homepage-footer">
-        <p>&copy; 2025 Bag of Holding</p>
+        <p>&copy; Created by Jacob Steele</p>
       </footer>
     </div>
   );
